@@ -44,7 +44,11 @@ jobs:
           java-version: '21'
           cache: maven
 
-      - name: Ejecutar pruebas y generar cobertura
+      - name: Run tests with Maven
+        working-directory: app
+        run: ./mvnw -B test
+
+      - name: Run Code Coverage with Maven
         working-directory: app
         run: ./mvnw -B verify
 
